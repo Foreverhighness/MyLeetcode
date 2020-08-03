@@ -27,10 +27,18 @@
 *.lib
 
 # Executables
-main
+main*
 *.exe
 *.out
 *.app
 
 # Folder
 .vscode
+
+# Test Data
+*.txt
+*.in
+
+# Code File
+!*.cpp
+!*.py
