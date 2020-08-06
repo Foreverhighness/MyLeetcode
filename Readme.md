@@ -39,8 +39,9 @@
   vector<int> foo() {
       using P = pair<int, int>;
       vector<P> vec;
-      vec.emplace_back({0, 0}); // 报错 Invaild
       vec.push_back({0, 0});    // 通过 Vaild
+      vec.emplace_back({0, 0}); // 报错 Invaild
+      vec.emplace_back(0, 0);   // 通过 Vaild
       vec.emplace_back();       // 通过 Vaild
       vec.push_back();          // 报错 Invaild
       return {0, 0};            // 通过 Vaild
