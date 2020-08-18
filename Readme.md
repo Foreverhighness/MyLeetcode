@@ -4,9 +4,9 @@
 
 - WSL 只是写写题的话还是蛮好用的。
 
-- `Python` 里要用 `functools.lru_cache` 进行 `dp` 的话要设置最大递归深度 `sys.setrecursionlimit`.
+- `Python` 里用 `functools.lru_cache` 进行 `dp` 的话要设置最大递归深度 `sys.setrecursionlimit`.
 
-- `C++` 中用 `lambda` 捕获类内元素时，应该直接捕获 `this` 或者设置别名。
+- `C++` 中用 `lambda` 捕获类内元素时，应该设置别名或者直接捕获 `this`.
 
   ```C++
   class MyClass {
@@ -18,7 +18,7 @@
   }
   ```
 
-- 感觉`C++` 中 `for_each` 比 `for` 快。
+- 感觉 `C++` 中 `for_each` 比 `for` 快。
 
   ```c++
   class MyClass {
@@ -48,4 +48,6 @@
   }
   ```
 
-  
+- `C++` 中拼接字符串时用 `string` 的 `+=`比 `stringstream` 要快。（惊了）
+
+- `C++17` 里的 `string_view` 是个好东西。
