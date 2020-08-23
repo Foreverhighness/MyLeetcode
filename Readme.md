@@ -41,13 +41,19 @@
       vector<P> vec;
       vec.push_back({0, 0});    // 通过 Vaild
       vec.emplace_back({0, 0}); // 报错 Invaild
+      vec.push_back(0, 0);      // 报错 Invaild
       vec.emplace_back(0, 0);   // 通过 Vaild
-      vec.emplace_back();       // 通过 Vaild
       vec.push_back();          // 报错 Invaild
+      vec.emplace_back();       // 通过 Vaild
       return {0, 0};            // 通过 Vaild
   }
   ```
 
-- `C++` 中拼接字符串时用 `string` 的 `+=`比 `stringstream` 要快。（惊了）
+- `C++` 中拼接字符串时用 `string` 的 `+=` 比 `stringstream` 要快。（惊了）
 
 - `C++17` 里的 `string_view` 是个好东西。
+
+- `C++` 中 `set` 有自带的 `lower_bound`，返回的是大于等于而不是小于，不建议对 `set` 用 `std::lower_bound`.
+
+- `C++` 中好像 `bitset<32>(num).count()` 比 `__builtin_popcount()` 要快。
+
