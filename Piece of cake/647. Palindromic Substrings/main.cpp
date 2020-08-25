@@ -11,7 +11,7 @@ class Solution {
         str.push_back('$');
         int n = str.size(), radius[n], res = 0;
         int center = 0, rightMax = 0;
-        for (int i = 1; i < n - 1; i++) {
+        for (int i = 1; i < n - 1; ++i) {
             int iMirror = 2 * center - i;
             radius[i] = i < rightMax ? min(rightMax - i, radius[iMirror]) : 0;
             while (str[i + radius[i] + 1] == str[i - radius[i] - 1]) {

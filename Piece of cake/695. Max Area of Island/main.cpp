@@ -19,7 +19,7 @@ class Solution {
    public:
     int maxAreaOfIsland(vector<vector<int>>& grid) {
         int res = 0, n = grid.size(), m = grid[0].size();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; ++i) {
             for (int j = 0; j < m; j++) {
                 if (grid[i][j] == 1) {
                     res = max(res, dfs(grid, i, j));

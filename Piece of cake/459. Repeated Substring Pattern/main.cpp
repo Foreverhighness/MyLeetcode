@@ -4,7 +4,7 @@ class Solution {
     vector<int> prefix_function(string s) {
         int n = s.length();
         vector<int> pi(n);
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i < n; ++i) {
             int prv = pi[i - 1];
             while (prv > 0 && s[prv] != s[i]) prv = pi[prv - 1];
             if (s[prv] == s[i]) ++prv;

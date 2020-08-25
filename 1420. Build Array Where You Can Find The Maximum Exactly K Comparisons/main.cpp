@@ -16,7 +16,7 @@ int numOfArraysDP(int n, int m, int k) {
                 dp[K][M][N] = dp[K][M][N-1];
                 for (int j = K; j <= M; ++j) {
                     int mul = 1;
-                    for (int i = N; i >= K; i--) {
+                    for (int i = N; i >= K; --i) {
                         dp[K][M][N] = (dp[K][M][N] + 1LL * dp[K-1][M-1][N-1] * mul) % mod;
                         mul = 1LL * mul * j % mod;
                     }
