@@ -1,6 +1,27 @@
 #!/usr/bin/python3
 # -*- encoding:utf8 -*-
 from math import factorial
+class Solution:
+    def getProbability(self, balls: [int]) -> float:
+        n = len(balls)
+        def C(n, m):
+            return factorial(n) // factorial(m) // factorial(n - m)
+        
+        from functools import lru_cache
+        
+        @lru_cache(None)
+        def dp(idx, diffsize, diffcolor):
+            if idx == n:
+                return 1 if 0 == diffsize == diffcolor else 0
+            res = 0.0
+            for i in range(balls[idx] + 1):
+                if i == 0: color = 1
+                elif i == balls[idx]: color = -1
+                else: color = 0
+                res += (C(balls[idx], i) / 2 ** balls[idx]) * dp(idx + 1, diffsize + i - balls[idx] + i, diffcolor + color)
+            return res
+
+        return dp(0, 0, 0) / (C(sum(balls), sum(balls) // 2) / 2 ** sum(balls))
 
 def C(n, m):
     return factorial(n) // factorial(m) // factorial(n - m)
