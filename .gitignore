@@ -9,6 +9,7 @@ main*
 # Folder
 .vscode
 .cache
+.bin
 
 # Test Data
 *.txt
