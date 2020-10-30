@@ -19,3 +19,7 @@ main*
 !*.cpp
 !*.py
 !*.rs
+
+# Added by cargo
+
+/target
